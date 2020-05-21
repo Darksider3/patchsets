@@ -1,0 +1,96 @@
+From fb9713733af0fff8d244eb4996050d257d1ba850 Mon Sep 17 00:00:00 2001
+From: Darksider3 <github@darksider3.de>
+Date: Thu, 21 May 2020 10:49:19 +0200
+Subject: [PATCH] Directory "hugo-theme-console" -> "hugo-tilde-console"
+
+Moves said directory, renames it everywhere where it's required. Fixes
+that one couldnt set up the hugo theme locally.
+---
+ config.toml                                         |   4 ++--
+ themes/hugo-tilde-console/makefile                  |   2 +-
+ .../css/animate-3.7.2.min.css                       |   0
+ .../css/console.css                                 |   0
+ .../css/terminal-0.7.1.min.css                      |   0
+ .../font/RobotoMono-Bold.ttf                        | Bin
+ .../font/RobotoMono-BoldItalic.ttf                  | Bin
+ .../font/RobotoMono-Italic.ttf                      | Bin
+ .../font/RobotoMono-Regular.ttf                     | Bin
+ themes/hugo-tilde-console/theme.toml                |   2 +-
+ 10 files changed, 4 insertions(+), 4 deletions(-)
+ rename themes/hugo-tilde-console/static/{hugo-theme-console => hugo-tilde-console}/css/animate-3.7.2.min.css (100%)
+ rename themes/hugo-tilde-console/static/{hugo-theme-console => hugo-tilde-console}/css/console.css (100%)
+ rename themes/hugo-tilde-console/static/{hugo-theme-console => hugo-tilde-console}/css/terminal-0.7.1.min.css (100%)
+ rename themes/hugo-tilde-console/static/{hugo-theme-console => hugo-tilde-console}/font/RobotoMono-Bold.ttf (100%)
+ rename themes/hugo-tilde-console/static/{hugo-theme-console => hugo-tilde-console}/font/RobotoMono-BoldItalic.ttf (100%)
+ rename themes/hugo-tilde-console/static/{hugo-theme-console => hugo-tilde-console}/font/RobotoMono-Italic.ttf (100%)
+ rename themes/hugo-tilde-console/static/{hugo-theme-console => hugo-tilde-console}/font/RobotoMono-Regular.ttf (100%)
+
+diff --git a/config.toml b/config.toml
+index a1b7542..8cea9ce 100644
+--- a/config.toml
++++ b/config.toml
+@@ -1,4 +1,4 @@
+-baseURL = "https://tilde.fun/"
++baseURL = "https://localhost"
+ languageCode = "en"
+ title = "tilde.fun"
+ theme = "hugo-tilde-console"
+@@ -27,4 +27,4 @@ uglyurls = true
+   
+   [[params.navlinks]]
+   name = "imprint"
+-  url = "imprint.html"
+\ No newline at end of file
++  url = "imprint.html"
+diff --git a/themes/hugo-tilde-console/makefile b/themes/hugo-tilde-console/makefile
+index d401c13..42079f3 100644
+--- a/themes/hugo-tilde-console/makefile
++++ b/themes/hugo-tilde-console/makefile
+@@ -9,4 +9,4 @@ usage: ### Usage (default)
+ 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed 's/^/   /' | sed -e 's/\\$$//' | sed -e 's/#/	/g'
+ 
+ hugo-server: ## Run Hugo web server and serve the example site
+-	cd exampleSite; hugo server --themesDir ../../ -t hugo-theme-console
+\ No newline at end of file
++	cd exampleSite; hugo server --themesDir ../../ -t hugo-tilde-console
+diff --git a/themes/hugo-tilde-console/static/hugo-theme-console/css/animate-3.7.2.min.css b/themes/hugo-tilde-console/static/hugo-tilde-console/css/animate-3.7.2.min.css
+similarity index 100%
+rename from themes/hugo-tilde-console/static/hugo-theme-console/css/animate-3.7.2.min.css
+rename to themes/hugo-tilde-console/static/hugo-tilde-console/css/animate-3.7.2.min.css
+diff --git a/themes/hugo-tilde-console/static/hugo-theme-console/css/console.css b/themes/hugo-tilde-console/static/hugo-tilde-console/css/console.css
+similarity index 100%
+rename from themes/hugo-tilde-console/static/hugo-theme-console/css/console.css
+rename to themes/hugo-tilde-console/static/hugo-tilde-console/css/console.css
+diff --git a/themes/hugo-tilde-console/static/hugo-theme-console/css/terminal-0.7.1.min.css b/themes/hugo-tilde-console/static/hugo-tilde-console/css/terminal-0.7.1.min.css
+similarity index 100%
+rename from themes/hugo-tilde-console/static/hugo-theme-console/css/terminal-0.7.1.min.css
+rename to themes/hugo-tilde-console/static/hugo-tilde-console/css/terminal-0.7.1.min.css
+diff --git a/themes/hugo-tilde-console/static/hugo-theme-console/font/RobotoMono-Bold.ttf b/themes/hugo-tilde-console/static/hugo-tilde-console/font/RobotoMono-Bold.ttf
+similarity index 100%
+rename from themes/hugo-tilde-console/static/hugo-theme-console/font/RobotoMono-Bold.ttf
+rename to themes/hugo-tilde-console/static/hugo-tilde-console/font/RobotoMono-Bold.ttf
+diff --git a/themes/hugo-tilde-console/static/hugo-theme-console/font/RobotoMono-BoldItalic.ttf b/themes/hugo-tilde-console/static/hugo-tilde-console/font/RobotoMono-BoldItalic.ttf
+similarity index 100%
+rename from themes/hugo-tilde-console/static/hugo-theme-console/font/RobotoMono-BoldItalic.ttf
+rename to themes/hugo-tilde-console/static/hugo-tilde-console/font/RobotoMono-BoldItalic.ttf
+diff --git a/themes/hugo-tilde-console/static/hugo-theme-console/font/RobotoMono-Italic.ttf b/themes/hugo-tilde-console/static/hugo-tilde-console/font/RobotoMono-Italic.ttf
+similarity index 100%
+rename from themes/hugo-tilde-console/static/hugo-theme-console/font/RobotoMono-Italic.ttf
+rename to themes/hugo-tilde-console/static/hugo-tilde-console/font/RobotoMono-Italic.ttf
+diff --git a/themes/hugo-tilde-console/static/hugo-theme-console/font/RobotoMono-Regular.ttf b/themes/hugo-tilde-console/static/hugo-tilde-console/font/RobotoMono-Regular.ttf
+similarity index 100%
+rename from themes/hugo-tilde-console/static/hugo-theme-console/font/RobotoMono-Regular.ttf
+rename to themes/hugo-tilde-console/static/hugo-tilde-console/font/RobotoMono-Regular.ttf
+diff --git a/themes/hugo-tilde-console/theme.toml b/themes/hugo-tilde-console/theme.toml
+index c5d794f..7e7d8e2 100644
+--- a/themes/hugo-tilde-console/theme.toml
++++ b/themes/hugo-tilde-console/theme.toml
+@@ -1,4 +1,4 @@
+-name = "hugo-theme-console"
++name = "hugo-tilde-console"
+ license = "MIT"
+ licenselink = "https://github.com/mrmierzejewski/hugo-theme-console/blob/master/LICENSE"
+ description = "A minimal, responsive and light theme for Hugo inspired by Linux console."
+-- 
+2.26.2
+
